@@ -6,3 +6,5 @@ https://localhost:3000/api/revalidate/?secret=`revalidation secret`&tag=`tag to 
 or you can only revalidate path or tag
 
 Source : https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-13-in-5-minutes
+
+content delivery: https://www.storyblok.com/docs/api/content-delivery/v2#topics/pagination

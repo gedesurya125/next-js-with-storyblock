@@ -1,10 +1,9 @@
 import { getStoryblokApi, StoryblokComponent } from '@storyblok/react/rsc';
 import StoryblokStory from '@storyblok/react/story';
-import { storyblokFetchStory } from 'components/storyblock/storyblokFetch';
-import { Box, Section } from 'theme/components';
+import { Box } from 'theme/components';
 
 const LandingPage = async ({ params }) => {
-  const { data } = await storyblokFetchStory('home');
+  const { data } = await fetchData();
 
   console.log('this is the data', data);
 
@@ -19,14 +18,10 @@ const LandingPage = async ({ params }) => {
 
 export default LandingPage;
 
-export const revalidate = 10;
-
 export async function fetchData() {
   let sbParams = { version: 'published' }; //draft or published
 
   const storyblokApi = getStoryblokApi();
-
-  console.log('this is the story block get', storyblokApi);
 
   return storyblokApi.get(`cdn/stories/home`, sbParams);
 }
