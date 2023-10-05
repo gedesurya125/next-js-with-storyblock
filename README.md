@@ -1,4 +1,4 @@
-# next js app directory with shopify starter
+# next js app directory with shopify storyblock starter
 
 # Revalidate using manual manual webhook
 
