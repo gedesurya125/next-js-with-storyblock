@@ -1,6 +1,13 @@
 import './globals.css';
 
+// External components
 import { NextThemeUiProvider } from 'theme/NextThemeUiProvider';
+
+// Local Components
+import { StoryblockWrapper } from 'components/storyblock/StoryblockWrapper';
+
+// Helper function
+import { getBaseUrl } from 'helper/getBaseUrl';
 
 // Fonts import
 import 'theme/fonts/sourceSerif4/sourceSerif-SemiBold.css';
@@ -9,8 +16,6 @@ import 'theme/fonts/sourceSerif4/sourceSerif-regular.css';
 import 'theme/fonts/sourceSans3/SourceSans3-regular.css';
 import 'theme/fonts/sourceSans3/SourceSans-SemiBold.css';
 import 'theme/fonts/sourceSerif4/SourceSerif4-medium-18pt.css';
-
-import { getBaseUrl } from 'helper/getBaseUrl';
 
 // reason for [lang] directory https://nextjs.org/docs/app/building-your-application/routing/internationalization#localization
 
@@ -29,14 +34,14 @@ export const metadata = {
 export default async function RootLayout({ children, params: { lang } }) {
   return (
     <>
-      <html lang={lang}>
-        <head></head>
-        <body>
-          <NextThemeUiProvider>
-              {children}
-          </NextThemeUiProvider>
-        </body>
-      </html>
+      <StoryblockWrapper>
+        <html lang={lang}>
+          <head></head>
+          <body>
+            <NextThemeUiProvider>{children}</NextThemeUiProvider>
+          </body>
+        </html>
+      </StoryblockWrapper>
     </>
   );
 }
